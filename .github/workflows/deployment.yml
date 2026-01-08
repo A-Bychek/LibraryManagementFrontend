@@ -49,14 +49,18 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             # Pull the latest image
+            echo "Pulling image..."
             sudo docker pull $ECR_REGISTRY/$ECR_REPOSITORY:latest
             
             # Stop and remove the old container if it exists
+            echo "Stop and remove the old container if it exists..."
             sudo docker stop front-library-management || true
             sudo docker rm front-library-management || true
             
             # Run the new container
+            echo "Run the new container..."
             sudo docker run -d --name front-library-management -p 3000:3000 $ECR_REGISTRY/$ECR_REPOSITORY:latest
             
             # Clean up old images
+            echo "Clean up old images..."
             sudo docker image prune -f
