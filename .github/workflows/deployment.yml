@@ -50,7 +50,7 @@ jobs:
           script: |
             # Login to AWS EC2 instance
             echo "Login to AWS EC2 instance..."
-            aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin $ECR_REGISTRY
+            aws ecr get-login-password --region ${{ secrets.AWS_REGION }} | docker login --username AWS --password-stdin ${{ secrets.ECR_REGISTRY }}
             
             # Pull the latest image
             echo "Pulling image..."
