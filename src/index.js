@@ -42,7 +42,7 @@ function Main() {
     UseDocumentTitle("Library Management App")
     return (
         <div>
-            <h1 className='App'>Welcome to the Library Management Application</h1>
+            <h1 className='App'>Welcome to the Library Management Application 2026</h1>
             <div className='App' >
                 <div><h2 className='button-beauty' style={{ fontSize: 25 }}><Link to="/about">About the application</Link></h2></div>
                 <div><h2 className='button-beauty' style={{ fontSize: 25 }}><Link to="/authorSection">Go to the Author Section</Link></h2></div>
